@@ -20,7 +20,7 @@ function generateChildren(){
         tempObj["children"] = [];
         fl.map( k => {
             tempObj["children"].push({
-                "name":k,
+                "name":`${k}`,
                 "value":array[k]
             })
         })
@@ -28,6 +28,26 @@ function generateChildren(){
     })
 }
 generateChildren()
+
+function generateAncestryLevel(ancestry){
+  // const filenames = Object.keys(data);
+  principalObj["children"] = [];
+  const filenames = [ancestry];
+  filenames.map(filename => {
+      const tempObj = {"name": filename}
+      const array = data[filename];
+      const fl = Object.keys(array)//.slice(0,5);
+      tempObj["children"] = [];
+      fl.map( k => {
+          tempObj["children"].push({
+              "name":`${k}`,
+              "value":array[k]
+          })
+      })
+      principalObj["children"].push(tempObj);
+  })
+}
+generateAncestryLevel("afr")
 
 
 export const SunburstChart = () => {
@@ -90,7 +110,7 @@ export const SunburstChart = () => {
           .descendants()
           .filter((d) => d.depth)
           .map((d, i) => (
-            <path key={`${d.data.name}-${i}`} fill={getColor(d)} d={arc(d)}>
+            <path key={`${d.data.name}-${i}`} fill={getColor(d)} d={arc(d)} onClick={() => generateAncestryLevel(d.data.name)}>
               <text>
                 {d
                   .ancestors()
