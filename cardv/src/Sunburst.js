@@ -1,6 +1,6 @@
 // Check full tutorial: https://dev.to/andrewchmr/react-d3-sunburst-chart-3cpd
 
-import React from "react";
+import React, { useState } from "react";
 import * as d3 from "d3";
 import data from "./data/ancestry_scores/combinedAncestryScore.json";
 
@@ -53,7 +53,6 @@ generateAncestryLevel("afr")
 export const SunburstChart = () => {
   const svgRef = React.useRef(null);
   const [viewBox, setViewBox] = React.useState("0,0,0,0");
-
   const partition = (data) =>
     d3.partition().size([2 * Math.PI, RADIUS])(
       d3
@@ -66,7 +65,7 @@ export const SunburstChart = () => {
     d3.quantize(d3.interpolateRainbow, principalObj.children?.length + 1)
   );
 
-  const format = d3.format(",d");
+  const format = d3.format(",s");
 
   const arc = d3
     .arc()
@@ -90,7 +89,6 @@ export const SunburstChart = () => {
   React.useEffect(() => {
     setViewBox(getAutoBox());
   }, []);
-
   const getColor = (d) => {
     while (d.depth > 1) d = d.parent;
     return color(d.data.name);
