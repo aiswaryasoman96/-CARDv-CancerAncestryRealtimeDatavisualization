@@ -1,0 +1,28 @@
+body {
+    margin :0;
+    padding :0 ;
+    box-sizing: border-box;
+    background-color: bisque;
+}
+.heading{
+    color:#6F4E37;
+    text-align :center;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-family: 'Gill Sans';
+    
+}
+
+.img{
+    border-radius: 50%;
+    text-align: center;
+    height: 250px;
+    
+}
+
+.member{
+    margin: 70px;
+    width: 150px;
+    text-align: center;
+    
+}

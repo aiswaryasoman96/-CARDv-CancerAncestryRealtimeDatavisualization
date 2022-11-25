@@ -1,0 +1,38 @@
+body {
+    margin :0;
+    padding :0 ;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+}
+.heading{
+    color:#6F4E37;
+    text-align :center;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-family: 'Gill Sans';
+    
+}
+
+.img{
+    border-radius: 50%;
+    text-align: center;
+    height: 250px;
+    
+}
+
+.member{
+    width: 21vw;
+    text-align: center;
+    background-color: white;
+    padding : 10px;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166,173,201,0.2);
+    
+}
+
+
+@media only screen and (max-width: 600px) {
+    .mmmmmm {
+      background-color: lightblue;
+    }
+  }
