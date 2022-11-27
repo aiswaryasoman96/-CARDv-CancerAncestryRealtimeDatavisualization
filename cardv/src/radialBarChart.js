@@ -29,7 +29,7 @@ export default (props) => (
             buildStyles({
           backgroundColor: "#000",
           textColor: "#fff",
-          pathColor: "red",
+          pathColor: "rgb(0, 198, 255)",
         })}
 />
 </Example>

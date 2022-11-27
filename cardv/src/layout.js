@@ -3,7 +3,8 @@ import NavBar from './components/Navbar';
 
 
 const Layout  = (props) => {
-    return (<div>
+    return (<div
+    >
     <NavBar NavBarLinks={[{
       title: 'Home',
       url: '/',

@@ -52,11 +52,11 @@ const callbackFNC = useCallback((x) => {
 },[selected[0]?.geneName])
 return (
     <>
-<BarChart width={window.innerWidth - 20} height={800} data={data} margin={{
+<BarChart width={window.innerWidth - 20}  height={800} data={data} margin={{
     top: 40,
     left: 40
 }}>
-	<Bar dataKey="geneMutationCount" fill="#ffbff9"  onClick={ (d) => {
+	<Bar dataKey="geneMutationCount" fill="#FE9E83"  onClick={ (d) => {
         const newSelection = [];
         const newObj = {
             geneName: d.geneName
@@ -66,11 +66,11 @@ return (
         setSelected(newSelection);
     }} />
 	<XAxis  xAxisId={0} angle={-90} textAnchor='middle' textRendering='optimizeLegibility' tickLine={false}
-    dataKey="geneName" fontSize={12} fontWeight={'bolder'} orientation='bottom' interval={0}
+    dataKey="geneName" stroke='white' fontSize={12} tick={{fill: 'white', fontSize: 20}} fontWeight={'bolder'} orientation='bottom' interval={0}
     >
     </XAxis>
-	<YAxis dataKey="geneMutationCount" fontSize={20}  fontWeight={'bolder'}>
-    <Label angle={270} offset={20} position='left' style={{ textAnchor: 'middle', fontWeight:"bolder", fontSize:20 }}>
+	<YAxis stroke='white' dataKey="geneMutationCount" tick={{fill: 'white', fontSize: 20}} fontSize={20}  fontWeight={'bolder'}>
+    <Label angle={270} offset={20} position='left' style={{ textAnchor: 'middle', fontWeight:"bolder", fontSize:20, fill: 'white' }}>
         Overall Frequency of Mutations on Genes
     </Label>
     </YAxis>
