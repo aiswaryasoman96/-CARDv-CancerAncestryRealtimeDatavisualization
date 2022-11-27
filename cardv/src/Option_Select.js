@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Select, { components } from 'react-select';
-// import {  colourOptions } from '../data';
 
 export const colourOptions = [
     { value: 'afr', label: 'African/ African American',  },
@@ -48,9 +47,10 @@ export default (props) => {
         <Select
     closeMenuOnSelect={true}
     components={{ IndicatorsContainer }}
-    defaultValue={[colourOptions[0], colourOptions[1]]}
+    defaultValue={props.count}
     isMulti
     options={colourOptions}
+    value={[...props.count]}
     onChange={(d) => {
       const newList = d.map(obj => ({value: obj.value,
       label: obj.label}))

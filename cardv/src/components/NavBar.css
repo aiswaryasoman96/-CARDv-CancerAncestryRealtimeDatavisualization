@@ -1,0 +1,41 @@
+.NavBar{
+    position: sticky;
+    top: 0px;
+    height: 180px;
+    background-color: black;
+    opacity: 0.75;
+    display: flex;
+    z-index: 5;
+    align-items: center;
+    padding: 0px 20px;
+    width: 100%;
+    justify-content: space-between;
+}
+.NavBar_logo{
+    color: white;
+    font-family: "MonteCarlo", regular;
+    font-size: 4rem;
+}
+.NavBar_list{
+    display: flex;
+    list-style: none;
+}
+.NavBar_item{
+    white-space: nowrap;
+}
+.NavBar_link{
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 0px 5px;
+    border-style: solid;
+    border-width: 0px 1px 0px;
+    border-color: transparent;
+    transition: 250ms;
+}
+.NavBar_link:hover{
+    border-color: white;
+    transition: 250ms;
+}

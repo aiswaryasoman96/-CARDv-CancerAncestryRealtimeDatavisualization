@@ -1,0 +1,20 @@
+.grid-graph-circle-container {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    padding: 10px;
+  }
+
+.grid-circles {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 5px;
+}
+
+.grid-graphs {
+    margin-top: -75px;
+}
+
+.radial-ancestry-title{
+    font-size: 25px;
+    font-weight: 500;
+}

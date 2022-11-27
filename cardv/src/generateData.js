@@ -80,29 +80,27 @@ const genes = data.map(obj => obj.geneName);
 const races = colourOptions.map(obj => obj.value);
 const masterData = {};
 
-const getProperComparisionData = (selectedGene,selectedRace, requiredGeneCombos = [...requiredGeneCombinations]) => 
+const getProperComparisionData = (selectedGene,selectedRace, requiredGeneCombos = JSON.parse(JSON.stringify(requiredGeneCombinations))) => 
 {
+    let maximum = Number.MIN_SAFE_INTEGER;
     const dataObj = ancestryData[selectedGene];
     const raceGeneArr = dataObj[selectedRace];
-    console.log(raceGeneArr)
     let initialBegin = 'LOW';
     let others = ['MODERATE','MODIFIER','HIGH']
     let index = 0
     for(let i=0;i<requiredGeneCombos.length;i++){
         const found = raceGeneArr.find((target) => requiredGeneCombos[i].name === target.mutationType && target.category === initialBegin)
             if(found){
-                // console.log(found)
                 requiredGeneCombos[i]['frequency'] = found.MutationCount
+                if(found.MutationCount > maximum){
+                    maximum = found.MutationCount;
+                }
             }
         if(requiredGeneCombos[i]?.category === initialBegin){
             initialBegin = others[index++];
         }
     }
-    // masterData[selectedGene] = {
-    //     ...masterData[selectedGene],
-    //     [selectedRace]: requiredGeneCombos
-    // }
-    return requiredGeneCombos;
+    return [requiredGeneCombos,maximum];
 }
 
 // for(let i of genes){
