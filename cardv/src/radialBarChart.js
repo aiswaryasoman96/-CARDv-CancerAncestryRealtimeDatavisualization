@@ -10,7 +10,7 @@ function Example(props) {
         <div title={`${props.onHover === true ? 'Click to add ancestry to comparitive view' : 'Ancestry already in comparitive view'}`} onClick={() => props.click(props.raceVal,props.raceName)} style={{ marginTop: 5, display: "flex" }}>
           <div style={{ width: "70%", paddingRight: 30, textAlign: 'center' }}>
             {props.children}
-            <h3 className="radial-ancestry-title">{props.raceVal}</h3>
+            <h3 className="radial-ancestry-title">{props.raceVal.toUpperCase()}</h3>
             <p>{props.description}</p>
           </div>
         </div>

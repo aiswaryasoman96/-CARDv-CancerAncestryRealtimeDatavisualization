@@ -41,10 +41,11 @@ export default (props) => {
     const [disabled, setDisabled] = useState(false);
     return (
     <fieldset style={{
-      marginTop: 25
+      marginTop: 25,
     }}
     disabled = {disabled}>
         <Select
+        theme={'danger'}
     closeMenuOnSelect={true}
     components={{ IndicatorsContainer }}
     defaultValue={props.count}
