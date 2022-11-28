@@ -65,17 +65,17 @@ return (
         window.max = Number.MIN_SAFE_INTEGER;
         setSelected(newSelection);
     }} />
-	<XAxis  xAxisId={0} angle={-90} textAnchor='middle' textRendering='optimizeLegibility' tickLine={false}
-    dataKey="geneName" stroke='white' fontSize={12} tick={{fill: 'white', fontSize: 20}} fontWeight={'bolder'} orientation='bottom' interval={0}
+	<XAxis  xAxisId={0} dx={-10} angle={-80} textAnchor='end'  tickLine={false}
+    dataKey="geneName" stroke='white' fontSize={12} tick={{fill: 'white', fontSize: 18 }} fontWeight={'bolder'} height={100} orientation='bottom' interval={0}
     >
     </XAxis>
 	<YAxis stroke='white' dataKey="geneMutationCount" tick={{fill: 'white', fontSize: 20}} fontSize={20}  fontWeight={'bolder'}>
-    <Label angle={270} offset={20} position='left' style={{ textAnchor: 'middle', fontWeight:"bolder", fontSize:20, fill: 'white' }}>
+    <Label angle={270} offset={20} position='left' style={{ textAnchor: 'middle', fontWeight:"bolder", fontSize:27, fill: 'white' }}>
         Overall Frequency of Mutations on Genes
     </Label>
     </YAxis>
 </BarChart>
-    <h3 style={{textAlign: 'center'}}>GENES</h3>
+    <h3 style={{textAlign: 'center', fontSize: 27}}>GENES</h3>
 { selected && selected.length && 
     <>
     <div>

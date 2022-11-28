@@ -30,7 +30,7 @@ const normalizeDomain = () => {
 const renderTick = (tickProps) => {
     const {x,y} = tickProps;
     const { value, offset } = tickProps.payload;
-    const pathX = Math.floor(tickProps.x) -390;
+    const pathX = Math.floor(tickProps.x) -410;
     if(value){
         return (
             <g>
@@ -48,14 +48,14 @@ return (
 }}>
 	<Bar dataKey="frequency" fill="#ab5ffc" />
 	<XAxis xAxisId={0} tickLine={false} stroke={'white'}
-    dataKey="name" dy={10} angle={-90} interval={0} orientation='bottom' tick={{fill: 'white', fontSize: 20}}/>
+    dataKey="name" textAnchor='end' dx={-10} height={60} angle={-90} interval={0} orientation='bottom' tick={{fill: 'white', fontSize: 20}}/>
 	<YAxis stroke='rgb(255,255,255)' domain={[0,normalizeDomain()]} interval={0} minTickGap={-5} tick={{fill: 'white', fontSize: 20}}>
     <Label fill='rgb(255,255,255)' angle={270} offset={5} position='left' style={{ textAnchor: 'middle', fontWeight:"bolder", fontSize:20 }}>
         Mutation Count
     </Label>
     </YAxis>
     <XAxis xAxisId={1} tickLine={false} fontSize="20px" 
-    tickMargin={20} tick = {renderTick}
+    tickMargin={20} dx={-10}tick = {renderTick}
      axisLine={false} allowDataOverflow={true} interval={0} type="category" dataKey="category" orientation='top' />
      <Tooltip content={<CustomTooltip />} />
      <CartesianGrid vertical={false} />
