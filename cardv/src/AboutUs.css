@@ -5,7 +5,7 @@ body {
     background-color: whitesmoke;
 }
 .heading{
-    color:#6F4E37;
+    color:#1E90FF;
     text-align :center;
     text-transform: capitalize;
     font-weight: bold;
@@ -17,11 +17,12 @@ body {
     border-radius: 50%;
     text-align: center;
     height: 250px;
+    /* width:250px */
     
 }
 
 .member{
-    width: 21vw;
+    width: 18vw;
     text-align: center;
     background-color: white;
     padding : 10px;

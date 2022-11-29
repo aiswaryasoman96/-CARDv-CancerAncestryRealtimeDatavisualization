@@ -1,6 +1,8 @@
 import React from "react";
 import geneImage from "./images/Gene.png";
 import aiswarya from "./images/Aiswarya.jpeg";
+import abhisheik from "./images/Abhisheik.jpeg";
+import leslie from "./images/Leslie.jpeg";
 import "./AboutUs.css";
 import Head from "./Heading";
 import Member from "./Member";
@@ -15,9 +17,9 @@ export default function Heading() {
   const arr = [
     {
       name: "Abhisheik",
-      img: aiswarya,
+      img: abhisheik,
       about:
-        "Aiswarya is a software engineer with years of experience in the Financial Technology domain. Her expertise lies in developing data engineering and data transforming applications using Python, SQL, Pandas and Flask. She is a trained classical dancer, also enjoys swimming and riding motorcycles",
+        "Abhisheik is a software engineer. He is a fairly unseasoned programmer with less than a year or professional work experience. Employed in a local tech startup funded by UF, he specializes in the .Net framework and C# with some experience with front end technologies. In his free time he enjoys cooking and gaming",
     },
     {
       name: "Aiswarya",
@@ -27,9 +29,9 @@ export default function Heading() {
     },
     {
       name: "Leslie",
-      img: aiswarya,
+      img: leslie,
       about:
-        "Aiswarya is a software engineer with years of experience in the Financial Technology domain. Her expertise lies in developing data engineering and data transforming applications using Python, SQL, Pandas and Flask. She is a trained classical dancer, also enjoys swimming and riding motorcycles",
+        "Leslie is a 2nd year PhD student in the Graim Lab. I build models of diseases more inclusive for ancestries typically not represented in GWAS data.",
     },
     {
       name: "Suhas",
