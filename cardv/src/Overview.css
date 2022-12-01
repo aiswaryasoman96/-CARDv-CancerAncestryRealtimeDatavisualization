@@ -18,3 +18,8 @@
     font-size: 25px;
     font-weight: 500;
 }
+
+.Input div{
+    font-size: 30px;
+    color: white !important;
+}

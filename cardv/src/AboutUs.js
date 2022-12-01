@@ -52,7 +52,7 @@ export default function Heading() {
           justifyContent: "space-between",
           padding: "10px",
         }}
-      >
+      > 
         {arr.map((obj) => {
           return <Member name={obj.name} img={obj.img} about={obj.about} />;
         })}
