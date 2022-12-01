@@ -2,7 +2,12 @@ import React from "react";
 import {CircularProgressbar, buildStyles} from 'react-circular-progressbar';
 import './Overview.css';
 
-
+const calculateValue = (value) => {
+  if(value > 1){
+    return 100*0.998;
+  }
+  return value*100;
+}
 
 function Example(props) {
     return (
@@ -20,8 +25,8 @@ function Example(props) {
 export default (props) => (
 <Example label={props.raceName}{...props}>
 <CircularProgressbar
-        value={(props.percentage*100)}
-        text={`${(props.percentage.toFixed(3))}`}
+        value={calculateValue(props.percentage)}
+        text={`${calculateValue(props.percentage).toFixed(2)}`}
         background
         backgroundPadding={6}
         strokeWidth={5}

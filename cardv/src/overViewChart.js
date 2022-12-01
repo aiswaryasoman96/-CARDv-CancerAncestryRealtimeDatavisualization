@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Label } from 'recharts';
 import Rechart from './Rechart'
 import {ancestryData} from './ancestryData';
@@ -8,7 +8,7 @@ import { colourOptions } from './Option_Select';
 import getProperComparisionData from './generateData';
 import importanceScore from './data/ancestry_scores/combinedAncestryScore.json';
 import './Overview.css';
-export const data = [{'geneName': 'ARPC5', 'geneMutationCount': 499}, {'geneName': 'BCL11A', 'geneMutationCount': 777}, {'geneName': 'CDC45', 'geneMutationCount': 1222}, {'geneName': 'CDCA7', 'geneMutationCount': 1307}, {'geneName': 'CDH3', 'geneMutationCount': 1037}, {'geneName': 'CDK6', 'geneMutationCount': 301}, {'geneName': 'CDKN2A', 'geneMutationCount': 1028}, {'geneName': 'CEBPB', 'geneMutationCount': 329}, {'geneName': 'CENPA', 'geneMutationCount': 180}, {'geneName': 'CENPN', 'geneMutationCount': 245}, {'geneName': 'CLCN4', 'geneMutationCount': 317}, {'geneName': 'CLCN5', 'geneMutationCount': 345}, {'geneName': 'CPNE8', 'geneMutationCount': 871}, {'geneName': 'CTSC', 'geneMutationCount': 739}, {'geneName': 'CYP39A1', 'geneMutationCount': 672}, {'geneName': 'EML4', 'geneMutationCount': 1777}, {'geneName': 'FANCE', 'geneMutationCount': 808}, {'geneName': 'FAT1', 'geneMutationCount': 4501}, {'geneName': 'FBLIM1', 'geneMutationCount': 581}, {'geneName': 'FOXA1', 'geneMutationCount': 476}, {'geneName': 'FOXC1', 'geneMutationCount': 549}, {'geneName': 'GPSM2', 'geneMutationCount': 899}, {'geneName': 'GPX7', 'geneMutationCount': 239}, {'geneName': 'HDGF', 'geneMutationCount': 2390}, {'geneName': 'HJURP', 'geneMutationCount': 1250}, {'geneName': 'HMGA1', 'geneMutationCount': 528}, {'geneName': 'HOMER3', 'geneMutationCount': 452}, {'geneName': 'IFRD1', 'geneMutationCount': 652}, {'geneName': 'IGF2BP2', 'geneMutationCount': 831}, {'geneName': 'ITGB8', 'geneMutationCount': 610}, {'geneName': 'KCMF1', 'geneMutationCount': 343}, {'geneName': 'KHDRBS3', 'geneMutationCount': 462}, {'geneName': 'KIF2C', 'geneMutationCount': 913}, {'geneName': 'LMO4', 'geneMutationCount': 250}, {'geneName': 'LYN', 'geneMutationCount': 1045}, {'geneName': 'MALL', 'geneMutationCount': 186}, {'geneName': 'MELK', 'geneMutationCount': 870}, {'geneName': 'MRAS', 'geneMutationCount': 238}, {'geneName': 'MSL3', 'geneMutationCount': 778}, {'geneName': 'MSN', 'geneMutationCount': 1139}, {'geneName': 'NOTCH1', 'geneMutationCount': 2773}, {'geneName': 'NT5C2', 'geneMutationCount': 749}, {'geneName': 'PDK1', 'geneMutationCount': 453}, {'geneName': 'PHOX2B', 'geneMutationCount': 64}, {'geneName': 'PLOD1', 'geneMutationCount': 1391}, {'geneName': 'PLOD3', 'geneMutationCount': 1339}, {'geneName': 'PM20D2', 'geneMutationCount': 481}, {'geneName': 'PPP1CB', 'geneMutationCount': 405}, {'geneName': 'PPP1R14C', 'geneMutationCount': 234}, {'geneName': 'PTCHD1', 'geneMutationCount': 470}, {'geneName': 'PVR', 'geneMutationCount': 3706}, {'geneName': 'RASD2', 'geneMutationCount': 271}, {'geneName': 'SCHIP1', 'geneMutationCount': 681}, {'geneName': 'SERBP1', 'geneMutationCount': 378}, {'geneName': 'SFRP1', 'geneMutationCount': 405}, {'geneName': 'SIRPA', 'geneMutationCount': 768}, {'geneName': 'SLC25A33', 'geneMutationCount': 321}, {'geneName': 'SMO', 'geneMutationCount': 3220}, {'geneName': 'SYT8', 'geneMutationCount': 1212}, {'geneName': 'TBC1D1', 'geneMutationCount': 9785}, {'geneName': 'TCL1A', 'geneMutationCount': 139}, {'geneName': 'TGFA', 'geneMutationCount': 103}, {'geneName': 'TRIM2', 'geneMutationCount': 2039}, {'geneName': 'UCK2', 'geneMutationCount': 261}, {'geneName': 'UGP2', 'geneMutationCount': 1938}, {'geneName': 'UPP1', 'geneMutationCount': 491}]
+const data = [{'geneName': 'FOXA1', 'precentage': 97.27}, {'geneName': 'FOXC1', 'precentage': 78.6}, {'geneName': 'CDH3', 'precentage': 51.18}, {'geneName': 'PVR', 'precentage': 35.61}, {'geneName': 'EML4', 'precentage': 27.16}, {'geneName': 'RASD2', 'precentage': 25.79}, {'geneName': 'IFRD1', 'precentage': 23.18}, {'geneName': 'CDKN2A', 'precentage': 22.36}, {'geneName': 'UCK2', 'precentage': 21.51}, {'geneName': 'PLOD1', 'precentage': 21.35}, {'geneName': 'IGF2BP2', 'precentage': 20.74}, {'geneName': 'BCL11A', 'precentage': 20.16}, {'geneName': 'LYN', 'precentage': 20.05}, {'geneName': 'MALL', 'precentage': 17.77}, {'geneName': 'MSL3', 'precentage': 16.47}, {'geneName': 'PLOD3', 'precentage': 15.85}, {'geneName': 'MSN', 'precentage': 14.69}, {'geneName': 'FANCE', 'precentage': 14.1}, {'geneName': 'PPP1CB', 'precentage': 14.07}, {'geneName': 'CYP39A1', 'precentage': 13.98}, {'geneName': 'PM20D2', 'precentage': 10.89}, {'geneName': 'CTSC', 'precentage': 10.73}, {'geneName': 'MRAS', 'precentage': 9.69}, {'geneName': 'MELK', 'precentage': 9.24}, {'geneName': 'PDK1', 'precentage': 8.93}, {'geneName': 'FAT1', 'precentage': 8.8}, {'geneName': 'GPX7', 'precentage': 7.57}, {'geneName': 'CDCA7', 'precentage': 7.29}, {'geneName': 'HJURP', 'precentage': 7.11}, {'geneName': 'KCMF1', 'precentage': 6.26}, {'geneName': 'UGP2', 'precentage': 6.02}, {'geneName': 'ITGB8', 'precentage': 5.97}, {'geneName': 'CLCN4', 'precentage': 5.14}, {'geneName': 'KIF2C', 'precentage': 4.98}, {'geneName': 'CDK6', 'precentage': 4.73}, {'geneName': 'GPSM2', 'precentage': 4.22}, {'geneName': 'SIRPA', 'precentage': 4.07}, {'geneName': 'NOTCH1', 'precentage': 3.41}, {'geneName': 'TCL1A', 'precentage': 3.35}, {'geneName': 'NT5C2', 'precentage': 3.34}, {'geneName': 'CENPA', 'precentage': 3.33}, {'geneName': 'HMGA1', 'precentage': 3.14}, {'geneName': 'PHOX2B', 'precentage': 2.83}, {'geneName': 'PPP1R14C', 'precentage': 2.64}, {'geneName': 'CDC45', 'precentage': 2.62}, {'geneName': 'CLCN5', 'precentage': 2.18}, {'geneName': 'UPP1', 'precentage': 2.06}, {'geneName': 'SMO', 'precentage': 1.93}, {'geneName': 'FBLIM1', 'precentage': 1.72}, {'geneName': 'HDGF', 'precentage': 1.7}, {'geneName': 'SERBP1', 'precentage': 1.61}, {'geneName': 'TGFA', 'precentage': 1.47}, {'geneName': 'SYT8', 'precentage': 1.26}, {'geneName': 'SFRP1', 'precentage': 0.96}, {'geneName': 'CEBPB', 'precentage': 0.78}, {'geneName': 'HOMER3', 'precentage': 0.41}, {'geneName': 'LMO4', 'precentage': 0.36}, {'geneName': 'SCHIP1', 'precentage': 0.23}, {'geneName': 'TRIM2', 'precentage': 0.16}, {'geneName': 'PTCHD1', 'precentage': 0.15}, {'geneName': 'SLC25A33', 'precentage': 0.11}, {'geneName': 'ARPC5', 'precentage': 0.09}, {'geneName': 'CENPN', 'precentage': 0.07}, {'geneName': 'CPNE8', 'precentage': 0.05}, {'geneName': 'TBC1D1', 'precentage': 0.04}, {'geneName': 'KHDRBS3', 'precentage': 0.02}]
 
 const getImportanceScore = (raceName,geneName) => {
     if (importanceScore[raceName][geneName]){
@@ -19,8 +19,7 @@ const getImportanceScore = (raceName,geneName) => {
 
 const App = () => {
 const [selected, setSelected] = useState([]);
-const [count,setCount] = useState([  { value: 'afr', label: 'African/ African American'  },
-{ value: 'amr', label: 'American Admixed / Latino', },]);
+const [count,setCount] = useState([]);
 
 const addToCompare = (raceVal,raceName) => {
     const countCopy = [...count];
@@ -56,7 +55,7 @@ return (
     top: 40,
     left: 40
 }}>
-	<Bar dataKey="geneMutationCount" fill="#FE9E83"  onClick={ (d) => {
+	<Bar dataKey="precentage" fill="#FE9E83"  onClick={ (d) => {
         const newSelection = [];
         const newObj = {
             geneName: d.geneName
@@ -66,12 +65,20 @@ return (
         setSelected(newSelection);
     }} />
 	<XAxis  xAxisId={0} dx={-10} angle={-80} textAnchor='end'  tickLine={false}
-    dataKey="geneName" stroke='white' fontSize={12} tick={{fill: 'white', fontSize: 18 }} fontWeight={'bolder'} height={100} orientation='bottom' interval={0}
+    dataKey="geneName" stroke='white' onClick={(val) => {
+        const newSelection = [];
+        const newObj = {
+            geneName: val?.value
+        }
+        newSelection.push(newObj);
+        window.max = Number.MIN_SAFE_INTEGER;
+        setSelected(newSelection);
+    } } fontSize={12} tick={{fill: 'white', fontSize: 18 }} fontWeight={'bolder'} height={100} orientation='bottom' interval={0}
     >
     </XAxis>
-	<YAxis stroke='white' dataKey="geneMutationCount" tick={{fill: 'white', fontSize: 20}} fontSize={20}  fontWeight={'bolder'}>
+	<YAxis stroke='white' dataKey="precentage" tick={{fill: 'white', fontSize: 20}} fontSize={20}  fontWeight={'bolder'}>
     <Label angle={270} offset={20} position='left' style={{ textAnchor: 'middle', fontWeight:"bolder", fontSize:27, fill: 'white' }}>
-        Overall Frequency of Mutations on Genes
+        Overall percentage of importance score across ancestries 
     </Label>
     </YAxis>
 </BarChart>

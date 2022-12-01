@@ -30,13 +30,12 @@ fetch(myText)
 const name = "hello";
 export default function Page() {
   return (
-    <>
-      <Navbar />
-      <img style={{ width: 2000, height: 400 }} src={geneImage} alt="Logo" />
+    <div className="background-about-data">
+      <img style={{ width: '100%', height: 400 }} src={geneImage} alt="Logo" />
       <Head heading={Title}></Head>
       <DataCartL cont={projectData.First} img={firstGene} />
       <DataCartR cont={projectData.Second} img={ml}></DataCartR>
       <DataCartL cont={projectData.Third} img={vis}></DataCartL>
-    </>
+    </div>
   );
 }

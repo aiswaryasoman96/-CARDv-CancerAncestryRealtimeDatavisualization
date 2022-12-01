@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Select, { components } from 'react-select';
+import './Overview.css';
 
 export const colourOptions = [
     { value: 'afr', label: 'African/ African American',  },
@@ -39,13 +40,37 @@ const checkMax = (maxAllowed,setDisabled) => {
 export default (props) => {
     const [maxAllowed,SetMax] = useState(2);
     const [disabled, setDisabled] = useState(false);
+    const colourStyles = {
+      control: styles => ({ ...styles, backgroundColor: 'black' }),
+      option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+        const color = '#0000';
+        return {
+          ...styles,
+          backgroundColor: isFocused ? 'red' : isSelected ? 'green' :  'blue',
+          color: 'white',
+          cursor: isFocused ? 'not-allowed' : 'default',
+        };
+      },
+      multiValue: (styles, {data}) => {
+        return {
+          ...styles,
+          backgroundColor: '#6BCB98',
+          color: 'white !important'
+        }
+      },
+      input: () => ({
+        fontSize: '10px',
+        color: 'white'
+      })
+    };
     return (
     <fieldset style={{
       marginTop: 25,
     }}
     disabled = {disabled}>
         <Select
-        theme={'danger'}
+        className='Input'
+        styles={colourStyles}
     closeMenuOnSelect={true}
     components={{ IndicatorsContainer }}
     defaultValue={props.count}
