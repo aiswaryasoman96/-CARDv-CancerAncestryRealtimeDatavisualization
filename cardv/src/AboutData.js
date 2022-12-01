@@ -30,8 +30,12 @@ fetch(myText)
 const name = "hello";
 export default function Page() {
   return (
-    <div className="background-about-data">
-      <img style={{ width: '100%', height: 400 }} src={geneImage} alt="Logo" />
+    <div
+      style={{ justifyContent: "space-between", flexDirection: "column" }}
+      className="background-about-data"
+    >
+      <img style={{ width: "100%", height: 400 }} src={geneImage} alt="Logo" />
+
       <Head heading={Title}></Head>
       <DataCartL cont={projectData.First} img={firstGene} />
       <DataCartR cont={projectData.Second} img={ml}></DataCartR>

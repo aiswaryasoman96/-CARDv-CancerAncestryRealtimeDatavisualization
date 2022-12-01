@@ -43,7 +43,6 @@ export default function Heading() {
 
   return (
     <>
-      <Navbar />
       <img style={{ width: "100%", height: 400 }} src={geneImage} alt="Logo" />;
       <Head heading={title}></Head>
       <div
@@ -52,7 +51,7 @@ export default function Heading() {
           justifyContent: "space-between",
           padding: "10px",
         }}
-      > 
+      >
         {arr.map((obj) => {
           return <Member name={obj.name} img={obj.img} about={obj.about} />;
         })}

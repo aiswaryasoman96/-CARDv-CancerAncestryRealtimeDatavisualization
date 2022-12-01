@@ -9,7 +9,7 @@ export default function Member(prop){
     <div className="member" >
     <h1 className = "heading">{prop.name}</h1>
     <img className = "img" src={prop.img} alt="Logo" />;
-    <p style={{color:'#000000',textAlign:'justify', marginInline:"15px"}}>{prop.about}</p>
+    <p style={{color:'#000000',textAlign:'justify', marginInline:"15px",fontStyle: 'italic',fontSize:"30"}}>{prop.about}</p>
     </div>
     )
 }
