@@ -3,6 +3,7 @@ import geneImage from "./images/Gene.png";
 import aiswarya from "./images/Aiswarya.jpeg";
 import abhisheik from "./images/Abhisheik.jpeg";
 import leslie from "./images/Leslie.jpeg";
+import suhas from './images/Suhas.jpg';
 import "./AboutUs.css";
 import Head from "./Heading";
 import Member from "./Member";
@@ -35,9 +36,9 @@ export default function Heading() {
     },
     {
       name: "Suhas",
-      img: aiswarya,
+      img: suhas,
       about:
-        "Aiswarya is a software engineer with years of experience in the Financial Technology domain. Her expertise lies in developing data engineering and data transforming applications using Python, SQL, Pandas and Flask. She is a trained classical dancer, also enjoys swimming and riding motorcycles",
+        "I'm an avid computer science enthusiast with a particular interest in Artificail Intelligence and Financial technologies. If you love to hit the gym, go on a hike, play video games, watch MMA, sci-fi stuff, I have a feeling we'll be best friends",
     },
   ];
 
