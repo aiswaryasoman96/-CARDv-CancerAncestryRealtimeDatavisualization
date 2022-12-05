@@ -1,9 +1,10 @@
 import React from "react";
 import geneImage from "./images/Gene.png";
-import aiswarya from "./images/Aiswarya.jpeg";
+// import aiswarya from "./images/Aiswarya.jpeg";
+import aiswarya from "./images/aiswaryas.jpg";
 import abhisheik from "./images/Abhisheik.jpeg";
 import leslie from "./images/Leslie.jpeg";
-import suhas from './images/Suhas.jpg';
+import suhas from "./images/Suhas.jpg";
 import "./AboutUs.css";
 import Head from "./Heading";
 import Member from "./Member";
